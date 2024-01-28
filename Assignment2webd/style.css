@@ -19,6 +19,24 @@ header {
     padding: 1rem 0;
     text-align: center;
 }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.header-text {
+    animation: fadeIn 2s ease-out;
+}
+
+.header-image img {
+    animation: slideDown 2s ease-out;
+}
+
 
 header h1 {
     margin-bottom: 0.5rem;
@@ -143,10 +161,138 @@ header {
     background-color: black;
     color: white;
 }
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    /* Optional: Max width to ensure the video is not too large */
+    max-width: 100%;
+    height: auto; /* This makes the video responsive */
+}
+.resume-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+    gap: 20px; /* Space between columns */
+    padding: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1; /* Makes both columns take up equal space */
+    padding: 20px;
+    border-radius: 10px; /* Adds rounded corners for aesthetics */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.left-column {
+    background-color: #f0f8ff; /* Lighter color for skills section */
+}
+
+.right-column {
+    background-color: #fff0f5; /* Different color for projects section */
+}
+
+/* Skills Table Styling */
+.skills-table {
+    margin: 0 auto; /* Centers the table */
+    width: 100%; /* Adjust the width as needed, 100% for full column width */
+    border-collapse: collapse;
+}
+
+.skills-table th, .skills-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.skills-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.skills-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.skills-table tr:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .resume-section {
+        flex-direction: column; /* Stacks columns vertically on smaller screens */
+    }
+}
+
+/* More styling can be added as per your design needs */
+
+.contact-columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 20px; /* Adds space between columns */
+}
+
+.contact-columns .left-column, .contact-columns .right-column {
+    flex: 1;
+    padding: 20px; /* Adds padding inside each column for spacing */
+    border-radius: 10px; /* Rounds the corners of the borders */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+.contact-columns .left-column {
+    background-color: #f0f8ff; /* Light blue background for the left column */
+    border: 2px solid #b0e0e6; /* Aesthetic border color */
+}
+
+.contact-columns .right-column {
+    background-color: #fff0f5; /* Light pink background for the right column */
+    border: 2px solid #ffb6c1; /* Aesthetic border color */
+}
+
+@media screen and (max-width: 768px) {
+    .contact-columns {
+        flex-direction: column;
+        gap: 10px; /* Reduces the gap for a tighter mobile layout */
+    }
+    
+    .contact-columns .left-column, .contact-columns .right-column {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
 
 
 
 /* Responsive Design */
+
+/* Main Styles */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .left-column, .right-column {
+        flex-basis: 100%;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .left-column, .right-column {
+        flex-basis: 100%; /* Each column takes full width on smaller screens */
+    }
+}
+
 @media (max-width: 768px) {
     .gallery figure {
         flex-basis: calc(50% - 10px);
@@ -162,4 +308,80 @@ header {
     .gallery figure {
         flex-basis: 100%;
     }
+    /* Existing styles remain unchanged */
+
+/* Improved Responsive Design */
+@media (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-image img {
+        margin: 0 auto; /* Centers the image */
+        display: block;
+    }
+
+    .skills-table, .video-container {
+        width: 95%; /* Adjusts width for smaller screens */
+    }
+}
+#contact table {
+    width: 100%; /* Adjust the table width as per your layout */
+    border-collapse: collapse; /* Removes the space between borders */
+    margin-top: 20px; /* Space above the table */
+}
+
+#contact td {
+    padding: 8px; /* Padding inside each table cell */
+    border-bottom: 1px solid #ddd; /* Light line between rows */
+}
+
+#contact tr:hover {
+    background-color: #f5f5f5; /* Adds a hover effect */
+}
+
+#contact td:first-child {
+    font-weight: bold; /* Makes the label (Email, Phone, etc.) bold */
+}
+
+#contact a {
+    color: #007bff; /* Adjust the link color */
+    text-decoration: none; /* No underline */
+}
+
+#contact a:hover {
+    text-decoration: underline; /* Underline on hover for better usability */
+}
+
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block; /* Stack nav items vertically */
+        margin: 10px 0; /* Adds margin for spacing */
+    }
+
+    .gallery figure {
+        flex-basis: calc(50% - 10px); /* Adjusts gallery items for smaller screens */
+    }
+
+    .header-text, .header-image, .skills-table th, .skills-table td {
+        font-size: smaller; /* Adjusts font size for readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery figure {
+        flex-basis: 100%; /* Full width for very small screens */
+    }
+
+    .header-content, .resume-column, form input, form button {
+        padding: 10px; /* Adjusts padding for smaller screens */
+    }
+
+    .skills-table {
+        display: block; /* Optional: consider adjusting table layout for very narrow screens */
+    }
+}
+
 }
